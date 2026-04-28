@@ -89,10 +89,3 @@ Os arquivos `k8s/serviceaccount.yaml` e `k8s/deployment.yaml` ilustram como o pa
 - Atualize `eks.amazonaws.com/role-arn` no `serviceaccount.yaml` com o ARN retornado pelo Terraform.
 - Configure `BUCKET_NAME` no Deployment com o bucket S3 criado.
 
-## Melhorias possíveis
-
-- Adicionar **AWS WAF** no CloudFront para proteção adicional.
-- Usar **S3 replication** para multi-região e redução de latência global.
-- Adicionar **monitoramento** via CloudWatch Alarms e Prometheus/Grafana no cluster.
-- Implementar **pipeline de CI/CD** completo com `terraform apply` controlado por revisão e `kubectl apply` para manifests.
-- Usar **private hosted zone** ou DNS customizado com ACM para CloudFront.

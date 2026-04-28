@@ -1,0 +1,17 @@
+aws_region = "us-east-1"
+environment = "dev"
+prefix = "dev"
+
+bucket_name = "dev-static-assets-unique-12345"
+cluster_name = "dev-admin-cluster"
+
+vpc_cidr = "10.0.0.0/16"
+public_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.101.0/24", "10.0.102.0/24"]
+
+node_instance_type = "t3.medium"
+desired_capacity = 2
+min_capacity = 1
+max_capacity = 3
+
+index_html_content = "<html><body><h1>Static Asset CDN</h1><p>Deployed by Terraform.</p></body></html>"

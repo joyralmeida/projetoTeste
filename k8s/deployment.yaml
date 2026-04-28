@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-panel
+  namespace: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-panel
+  template:
+    metadata:
+      labels:
+        app: admin-panel
+    spec:
+      serviceAccountName: admin-panel-sa
+      containers:
+        - name: admin-panel
+          image: public.ecr.aws/amazonlinux/amazonlinux:2
+          command: ["sh", "-c", "echo Admin panel placeholder; sleep 3600"]
+          env:
+            - name: BUCKET_NAME
+              value: "<YOUR_BUCKET_NAME>"
+            - name: AWS_REGION
+              value: "<YOUR_AWS_REGION>"
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
